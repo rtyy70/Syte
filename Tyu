@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Заглавная страница</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: all 0.5s ease;
+        }
+
+        .half {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 2em;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .left {
+            background-color: #1e90ff;
+        }
+
+        .right {
+            background-color: #ff6347;
+        }
+
+        /* Наведение на левую */
+        .container:hover .left:hover {
+            flex: 2; /* увеличить левую */
+        }
+
+        .container:hover .left:hover ~ .right {
+            flex: 0.8; /* уменьшить правую */
+        }
+
+        /* Наведение на правую */
+        .container:hover .right:hover {
+            flex: 2; /* увеличить правую */
+        }
+
+        .container:hover .right:hover ~ .left {
+            flex: 0.8; /* уменьшить левую */
+        }
+
+        .half:hover {
+            font-size: 3em;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="half left" href="page1.html">Первая половина</a>
+        <a class="half right" href="page2.html">Вторая половина</a>
+    </div>
+</body>
+</html>
